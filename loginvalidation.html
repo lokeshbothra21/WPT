@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error{
+            color: red;
+        }
+    </style>
+    <script>
+        function validateuname(){
+            var nm = document.getElementById("uname").value;
+            if(nm.trim().length>=3){
+                document.getElementById("errname").innerHTML="";
+                return true;
+            }
+            document.getElementById("errname").innerHTML="user name cannot be spaces, pls enter 3 charcter user name";
+            return false;
+        }
+
+        function validatepassword(){
+            var p = document.getElementById("pass").value;
+            if(p.trim().length>=3){
+                document.getElementById("errpass").innerHTML="";
+                return true;
+            }
+            document.getElementById("errname").innerHTML="password cannot be spaces, pls enter 3 charcter user name";
+            return false;
+        }
+
+        function confirmpassword(){
+            var pass = document.getElementById("pass").value;
+            var cpass = document.getElementById("cpass").value;
+            if(pass.trim().length>=3 && pass===cpass){
+                document.getElementById("errcpass").innerHTML="";
+                return true;
+            }
+            document.getElementById("errcpass").innerHTML="password and confirmpassword should be same";
+                return false;
+        }
+
+        function validateall(){
+            var flag = validateuname();
+            var flag1= validatepassword();
+            var flag2= confirmpassword();
+            return flag && flag1 && flag2;
+        }
+    </script>
+</head>
+
+<body>
+    <form action="file1" method="post" onsubmit="return validateall()">
+        <table>
+            <tr>
+                <td>
+                    <label>Username:</label>
+                </td>
+                <td>
+                    <input type="text" name="uname" id="uname" required autofocus minlength="3" maxlength="8">
+                </td>
+                <td id="errname" class="error"></td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Password:</label>
+                </td>
+                <td>
+                    <input type="password" name="Password" id="pass" required>
+                </td>
+                <td id="errpass" class="error"></td>
+            </tr>
+            <tr>
+                <td>Confirm Password :</td>
+                <td><input type="password" name="cpass" id="cpass"></td>
+                <td id="errpass" class="error"></td>
+                <td id="errcpass" class="error"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+
+                    <button type="submit" name="btn" id="login" value="login">Login</button>
+                    <button type="reset" name="btn" id="cancel" value="cancel">Cancel</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

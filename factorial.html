@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // function addnumbers(){
+        //     var n1 = parseInt(document.getElementById("btn1").value);
+        //     var n2 = parseInt(document.getElementById("btn2").value);
+        //     var addition = n1+n2;
+        //     alert("Addition:"+addition);
+        // }
+        function addnumbers(){
+            //to retrieve the value from the text box, parseInt will convert it into number
+            var n1=parseInt(document.getElementById("number1").value);
+            var n2=parseInt(document.getElementById("number2").value);
+            var addition =n1+n2;
+            document.getElementById("result").value=addition;
+            //to display message in poup box
+            // alert("Addition : "+addition);
+            //clear the textbox
+            document.getElementById("n1").value="";
+            document.getElementById("n2").value="";
+        }
+
+        function factorial(){
+            var f1 = parseInt(document.getElementById("number1").value);
+
+            var n = 1;
+            for(var i=1;i<=f1;i++){
+                n=n*i;
+            }
+            alert("Factorial:"+n);
+            document.getElementById.value="";
+                }
+    </script>
+
+</head>
+<body>
+    <form>
+    Number1: <input type="text" name="num1" id="number1"><br/>
+    Number2: <input type="text" name="num2" id="number2"><br/>
+    <button type="button" id="btn1" name="button" value="Addition" onclick="addnumbers()">Addition</button>
+    <button type="button" id="btn2" name="button" value="Factorial" onclick="factorial()">Factorial</button>
+    <button type="reset" name="button" id="btn3"  value="Cancel">Cancel</button><br/>
+    Result:<input type="text" id="result">
+</form>
+
+</body>
+</html>

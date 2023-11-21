@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/objectdemo.js"></script>
+    <script>
+        emparr = [new Employee(1,'Swapnali','3333','hr','associate'),
+        new Employee(2,'sunil','4444','admin','sr. manager')];
+
+        function displayTable(){
+            var str=`<table border='2'><tr><th>Employee id</th><th>/Name</th><th>Mobile</th><th>Department</th><th>Designation</th></tr>`
+                for(var emp of emparr){
+                    str+=`<tr><td>${emp.empid}</td><td>${emp.empname}</td><td>${emp.empmobile}</td><td>${emp.empdept}</td><td>${emp.empdesg}</td></tr>`
+                }
+                str+="</table>";
+                document.getElementById("mydiv").innerHTML=str;
+            }
+    </script>
+    <th></th>
+</head>
+<body onload="displayTable()">
+    <form>
+        Employeeid: <input type="text" id="empid" name="employee"><br/>
+        Employeename: <input type="text" id="empname" name="employee"><br/>
+        Employeemobile: <input type="text" id="empmobile" name="employee"><br/>
+        Department: <input type="text" id="empdept" name="employee"><br/>
+        Designation <input type="text" id="empdesg" name="employye"><br/>
+        <button type="button" id="add" name="btn1" onclick="Addemp()">AddEmployee</button>
+        <button type="button" id="delete" name="btn1" onclick="Delemp()">DeleteEmployee</button>
+        <button type="button" id="modify" name="btn1" onclick="Modifyemp()">ModifyEmployee</button>
+        <button type="reset" id="reset" name="reset">Cancel</button>
+
+    </form><br/><br/>
+    <div id="mydiv"></div>
+
+</body>
+</html>
